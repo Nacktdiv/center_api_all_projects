@@ -16,15 +16,18 @@ jobs:
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
             if [ ! -d "api-center/.git" ]; then
-              echo "Folder belum ada atau bukan git repo, melakukan clone..."
-              git clone https://github.com/Nacktdiv/center_api_all_projects.git api-center
+              echo "git repo belum ada, melakukan clone..."
+              cd api-center
+              git init
+              git remote add origin https://github.com/Nacktdiv/center_api_all_projects.git
+            else 
+              echo "git repo ada, melakukan fetch dan hard reset..."
+              cd api-center
+              git fetch --all
+              git reset --hard origin/main
             fi
 
-            echo "sudah diinstall"
-
             source /home/dzxtssbx/nodevenv/api-center/24/bin/activate && cd /home/dzxtssbx/api-center
-
-            git pull origin main 
 
             npm install
             touch tmp/restart.txt
