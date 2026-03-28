@@ -15,7 +15,7 @@ jobs:
           port: 6401
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            if [ ! -d "api-center" ]; then
+            if [ ! -d "api-center/.git" ]; then
               echo "Folder belum ada atau bukan git repo, melakukan clone..."
               git clone https://github.com/Nacktdiv/center_api_all_projects.git api-center
             fi
