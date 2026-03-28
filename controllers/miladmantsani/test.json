@@ -1,0 +1,83 @@
+{
+    "payload": {
+        "data": [
+            {
+                "id_event": 1,
+                "nama_event": "olimada",
+                "deskripsi": "ppp",
+                "biaya_pendaftaran": "100000.00",
+                "status_buka": "Tutup",
+                "pendaftarans": [
+                    {
+                        "id_pendaftaran": 1,
+                        "asal_institusi": "MTsN 1 Kota Kediri",
+                        "nama_tim": "JOSJOSJISJIS",
+                        "nama_pembina": "Dr. BOBI TOTOT",
+                        "nama_peserta": "[{\"nama\":\"Ikhbar Bima\",\"nohp\":\"081234567890\"},{\"nama\":\"Nadhif\",\"nohp\":\"085678901234\"},{\"nama\":\"JOJON\",\"nohp\":\"087654321098\"}]",
+                        "status_verifikasi": "Menunggu",
+                        "tanggal_daftar": "2025-12-07T06:15:01.000Z",
+                        "kode_unik_tiket": "TICKET-FPCOLZRX3",
+                        "jumlah_bayar": "0.00",
+                        "id_user": 4,
+                        "id_event": 1,
+                        "pembayaran": {
+                            "id_pembayaran": 1,
+                            "metode_pembayaran": "Cash",
+                            "bukti_pembayaran": "ikhbar_bima_6M2VV0.jpeg",
+                            "tanggal_pembayaran": "2025-12-07T09:33:48.000Z",
+                            "status_konfirmasi": "Menunggu",
+                            "id_pendaftaran": 1
+                        }
+                    },
+                    {
+                        "id_pendaftaran": 5,
+                        "asal_institusi": "MTsN 1 kota kota",
+                        "nama_tim": "Generasi Emas Mila",
+                        "nama_pembina": "Dr. Ratna Sar",
+                        "nama_peserta": "[{\"nama\":\"Andi Prataa\",\"nohp\":\"081234567890\"},{\"nama\":\"Budi Santoso\",\"nohp\":\"085678901234\"},{\"nama\":\"Citra Dewi\",\"nohp\":\"087654321098\"}]",
+                        "status_verifikasi": "Berhasil",
+                        "tanggal_daftar": "2025-12-07T09:47:05.000Z",
+                        "kode_unik_tiket": "TICKET-50H18EXKT",
+                        "jumlah_bayar": "0.00",
+                        "id_user": 5,
+                        "id_event": 1,
+                        "pembayaran": {
+                            "id_pembayaran": 2,
+                            "metode_pembayaran": "Transfer",
+                            "bukti_pembayaran": "ueae_WA9DOD.jpg",
+                            "tanggal_pembayaran": "2025-12-07T09:54:09.000Z",
+                            "status_konfirmasi": "Berhasil",
+                            "id_pendaftaran": 5
+                        }
+                    },
+                    {
+                        "id_pendaftaran": 6,
+                        "asal_institusi": "MTsN 4 Kota Kediri",
+                        "nama_tim": "JOSJOSJISJIS",
+                        "nama_pembina": "Dr. BOBI TOTOT",
+                        "nama_peserta": "[{\"nama\":\"Ikhbar Bima\",\"nohp\":\"081234567890\"},{\"nama\":\"Nadhif\",\"nohp\":\"085678901234\"},{\"nama\":\"JOJON\",\"nohp\":\"087654321098\"}]",
+                        "status_verifikasi": "Menunggu",
+                        "tanggal_daftar": "2025-12-07T12:43:32.000Z",
+                        "kode_unik_tiket": "TICKET-WCVJFGO8V",
+                        "jumlah_bayar": "0.00",
+                        "id_user": 6,
+                        "id_event": 1,
+                        "pembayaran": {
+                            "id_pembayaran": 3,
+                            "metode_pembayaran": "Cash",
+                            "bukti_pembayaran": "muatee_1EOCEZ.jpeg",
+                            "tanggal_pembayaran": "2025-12-07T12:44:53.000Z",
+                            "status_konfirmasi": "Menunggu",
+                            "id_pendaftaran": 6
+                        }
+                    }
+                ]
+            }
+        ],
+        "statusCode": 200
+    },
+    "message": "DATA EVENT BERHASIL DIAMBIL",
+    "pagination": {
+        "length": 1
+    }
+}

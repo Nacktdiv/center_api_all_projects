@@ -1,0 +1,29 @@
+name: Deploy to cPanel
+on:
+  push:
+    branches: [ main ] # Jalankan setiap push ke branch main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Deploy via SSH
+        uses: appleboy/ssh-action@master
+        with:
+          host: 163.223.227.37
+          username: dzxtssbx
+          port: 21098
+          key: |
+            -----BEGIN OPENSSH PRIVATE KEY-----
+            b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
+            QyNTUxOQAAACBHC/Q5VAJV35r7s+zEDwcZD9GTJb4Jr2UMEhHSWwXA7wAAALBADH/CQAx/
+            wgAAAAtzc2gtZWQyNTUxOQAAACBHC/Q5VAJV35r7s+zEDwcZD9GTJb4Jr2UMEhHSWwXA7w
+            AAAEDqYZrnqejK5MRpIApkPvoBr8rMlxFcoNHNAnUnRrq9oUcL9DlUAlXfmvuz7MQPBxkP
+            0ZMlvgmvZQwSEdJbBcDvAAAAJm5hY2t0ZGl2QG5hY2t0ZGl2LUhQLUxhcHRvcC0xNHMtY2
+            YyeHh4AQIDBAUGBw==
+            -----END OPENSSH PRIVATE KEY-----
+          script: |
+            cd ~/path/ke/project/kamu
+            git pull origin main
+            npm install
+            pm2 restart all # Atau perintah restart Node.js lainnya
