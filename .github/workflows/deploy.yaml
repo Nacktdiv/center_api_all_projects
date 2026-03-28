@@ -12,7 +12,7 @@ jobs:
         with:
           host: 163.223.227.37
           username: dzxtssbx
-          port: 21098
+          port: 6401
           key: |
             -----BEGIN OPENSSH PRIVATE KEY-----
             b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAAAMwAAAAtzc2gtZW
@@ -23,7 +23,7 @@ jobs:
             YyeHh4AQIDBAUGBw==
             -----END OPENSSH PRIVATE KEY-----
           script: |
-            cd ~/path/ke/project/kamu
+            cd ~
             git pull origin main
             npm install
-            pm2 restart all # Atau perintah restart Node.js lainnya
+            pm2 restart all 
