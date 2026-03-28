@@ -15,4 +15,5 @@ jobs:
           port: 6401
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
+            echo "berhasil"
         
