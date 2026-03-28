@@ -20,11 +20,11 @@ jobs:
               git clone https://github.com/Nacktdiv/center_api_all_projects.git api-center
             fi
 
-            cd /home/dzxtssbx/api-center
+            echo "sudah diinstall"
+
+            source /home/dzxtssbx/nodevenv/api-center/24/bin/activate && cd /home/dzxtssbx/api-center
 
             git pull origin main 
-
-            source /home/dzxtssbx/nodevenv/api-center/10/bin/activate
 
             npm install
             touch tmp/restart.txt
