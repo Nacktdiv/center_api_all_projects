@@ -23,7 +23,8 @@ jobs:
             YyeHh4AQIDBAUGBw==
             -----END OPENSSH PRIVATE KEY-----
           script: |
-            cd ~
+            cd api-center/public
+            git init
             git pull origin main
             npm install
             pm2 restart all 
