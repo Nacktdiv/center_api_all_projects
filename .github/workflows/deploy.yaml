@@ -15,28 +15,4 @@ jobs:
           port: 6401
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            cd /home/dzxtssbx/api-center
-
-            if [ ! -d ".git" ]; then
-              echo "--- LOG: Inisialisasi Repo Baru ---"
-              git init
-              git remote add origin https://github.com/Nacktdiv/center_api_all_projects.git
-            fi
-
-            echo "--- LOG: Sinkronisasi Kode ---"
-            git fetch --all
-            git reset --hard origin/main
-
-            echo "--- LOG: Aktivasi Node.js 24 ---"
-            source /home/dzxtssbx/nodevenv/api-center/24/bin/activate
-            
-            cd /home/dzxtssbx/api-center
-
-            echo "--- LOG: Menjalankan NPM Install di $(pwd) ---"
-            npm install --production
-            
-            mkdir -p tmp
-            touch tmp/restart.txt
-            
-            echo "--- LOG: Deploy Selesai! ---"
         
