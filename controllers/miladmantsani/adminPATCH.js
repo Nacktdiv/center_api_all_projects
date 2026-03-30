@@ -2,14 +2,15 @@ const {event, pembayaran, pendaftaran} = require('../../models/miladmantsani/set
 const resFormat = require('../../models/miladmantsani/resformat');
 
 const updateEvent = async (res, body) => {
-    const { nama_event, deskripsi, biaya_pendaftaran, status_buka } = body;
+    const { nama_event, deskripsi, biaya_pendaftaran, status_buka, tipe_event } = body;
 
     try {
         const eventToUpdate = await event.findOne({where: {nama_event: nama_event}});
         const updateData = await eventToUpdate.update({
             deskripsi: deskripsi || eventToUpdate.deskripsi,
             biaya_pendaftaran: biaya_pendaftaran || eventToUpdate.biaya_pendaftaran,
-            status_buka: status_buka || eventToUpdate.status_buka
+            status_buka: status_buka || eventToUpdate.status_buka,
+            tipe_event: tipe_event || eventToUpdate.tipe_event
         });
         resFormat(res, 200, updateData, "DATA EVENT BERHASIL DIPERBARUI");
     } catch (err) {
