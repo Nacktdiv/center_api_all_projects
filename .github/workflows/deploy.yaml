@@ -17,6 +17,8 @@ jobs:
           script: |
             cd /home/dzxtssbx/center-api
 
+            npm install --production
+
             git pull origin main
 
             mkdir -p tmp
