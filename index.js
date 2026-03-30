@@ -38,10 +38,12 @@ const adminRouter = require('./routes/miladmantsani/admin')
 const authRouter = require('./routes/miladmantsani/auth')
 
 // START
+app.get('/testing', (req, res) => {
+    res.send('testing berhasil')
+})
 app.use('/',authRouter)
 app.use('/peserta', usersRouter)
 app.use('/admin', adminRouter)
-
 // END
 
 // listen port
