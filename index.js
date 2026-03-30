@@ -39,7 +39,7 @@ const authRouter = require('./routes/miladmantsani/auth')
 
 // START
 app.get('/testing', (req, res) => {
-    res.send('testing berhasil')
+    res.send('testing berhasil yuhuuu')
 })
 app.use('/',authRouter)
 app.use('/peserta', usersRouter)
