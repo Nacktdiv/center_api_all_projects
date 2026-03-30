@@ -15,5 +15,10 @@ jobs:
           port: 6401
           key: ${{ secrets.SSH_PRIVATE_KEY }}
           script: |
-            echo "berhasil"
+            cd /home/dzxtssbx/center-api
+
+            git pull origin main
+
+            mkdir -p tmp
+            touch tmp/restart.txt
         
