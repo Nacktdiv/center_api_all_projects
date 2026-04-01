@@ -35,7 +35,7 @@ const connectMysqlDB = async () => {
             miladmantsaniDB.authenticate()
         ])
 
-        if (process.env.NODE_ENV !== 'production') {
+        if (process.env.NODE_ENV == 'production') {
             await Promise.all ([
                 miladmantsaniDB.sync({ alter: true })
             ]) 

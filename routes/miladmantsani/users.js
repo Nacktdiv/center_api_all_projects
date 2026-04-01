@@ -6,7 +6,7 @@ const {authMiddleware} = require('../../middleware/miladmantsani/auth');
 const checkRoleMiddleware = require('../../middleware/miladmantsani/checkRole');
 const uploadBuktiBayar = require('../../middleware/miladmantsani/multer')
 
-const mengetahuiEvent = require('../../controllers/miladmantsani/pesertaGET');
+const {mengetahuiEvent, memintaBuktiPembayaran} = require('../../controllers/miladmantsani/pesertaGET');
 const {updatePeserta, updatePendaftaran, updatePembayaran} = require('../../controllers/miladmantsani/pesertaPATCH');
 const {createPendaftaran, createPembayaran} = require('../../controllers/miladmantsani/pesertaPOST');
 
@@ -66,5 +66,9 @@ router.patch('/pembayaran/perbaruidata',
         updatePembayaran(res, fileBaru, req.body);
     }
 );
+
+router.get('/pembayaran/receipt/', authMiddleware, checkRoleMiddleware(['peserta']), (req, res) => {
+    memintaBuktiPembayaran(res, req.id_user)
+} )
 
 module.exports = router;
