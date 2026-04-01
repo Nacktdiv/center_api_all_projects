@@ -25,11 +25,7 @@ const memintaBuktiPembayaran = async (res, id_user) => {
             include:{
                 model:pendaftaran,
                 required:true,
-                include: {
-                    model:user,
-                    required:true,
-                    where:{id_user:id_user}
-                }
+                where:{id_user:id_user}
             }
         })
         const folderPath = process.env.RECEIPT_PATH
