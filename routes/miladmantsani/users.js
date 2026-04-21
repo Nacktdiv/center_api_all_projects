@@ -67,8 +67,8 @@ router.patch('/pembayaran/perbaruidata',
     }
 );
 
-router.get('/pembayaran/receipt/', authMiddleware, checkRoleMiddleware(['peserta']), (req, res) => {
-    memintaBuktiPembayaran(res, req.id_user)
+router.get('/receipt/', authMiddleware, checkRoleMiddleware(['peserta']), (req, res) => {
+    memintaBuktiPembayaran(res, req.user.id_user)
 } )
 
 module.exports = router;

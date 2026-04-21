@@ -6,11 +6,13 @@ env.config();
 const templateEnv = ['NAME', 'USER', 'PASS', 'HOST', 'PORT']
 const nameProject = ['MILAD']
 
-const MYSQL_MILAD_NAME = process.env.MYSQL_MILAD_NAME || 'miladmantsani';
+const MYSQL_MILAD_NAME = process.env.MYSQL_MILAD_NAME 
 const MYSQL_MILAD_USER = process.env.MYSQL_MILAD_USER 
-const MYSQL_MILAD_PASS = process.env.MYSQL_MILAD_PASS || '';
-const MYSQL_MILAD_HOST = process.env.MYSQL_MILAD_HOST || '127.0.0.1'
-const MYSQL_MILAD_PORT = process.env.MYSQL_MILAD_PORT || '3306'
+const MYSQL_MILAD_PASS = process.env.MYSQL_MILAD_PASS 
+const MYSQL_MILAD_HOST = process.env.MYSQL_MILAD_HOST
+const MYSQL_MILAD_PORT = process.env.MYSQL_MILAD_PORT 
+
+console.log(MYSQL_MILAD_PORT, MYSQL_MILAD_HOST, MYSQL_MILAD_PASS, MYSQL_MILAD_USER, MYSQL_MILAD_NAME)
 
 
 const miladmantsaniDB = new Sequelize(MYSQL_MILAD_NAME, MYSQL_MILAD_USER, MYSQL_MILAD_PASS, {
@@ -32,7 +34,8 @@ const connectMysqlDB = async () => {
         })
 
         await Promise.all([
-            miladmantsaniDB.authenticate()
+            miladmantsaniDB.authenticate(),
+            miladmantsaniDB.sync()
         ])
 
         if (process.env.NODE_ENV == 'production') {

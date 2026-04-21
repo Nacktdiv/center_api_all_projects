@@ -25,8 +25,8 @@ const logout = (req, res) => {
     try {
         res.clearCookie('token', {
             httpOnly: true,
-            secure: process.env.NODE_ENV === 'production',
-            sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'none', 
+            secure: process.env.NODE_ENV === 'production' ? true : false,
+            // sameSite: process.env.NODE_ENV === 'production' ? 'strict' : 'none', 
             path: '/'
         });
 

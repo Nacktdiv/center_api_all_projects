@@ -8,7 +8,7 @@ const cleanString = (str) => {
 
 const customStorage = multer.diskStorage({
     destination: (req, file, cb) => {
-        cb(null, 'public'); 
+        cb(null, process.env.RECEIPT_PATH); 
     },
     filename: (req, file, cb) => {
         const namaLengkap = req.user?.nama_lengkap || 'unknown_user'; 

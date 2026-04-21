@@ -51,7 +51,7 @@ const updatePembayaran = async (res, file, body) => {
         }
 
         if(pembayaranToUpdate.bukti_pembayaran && (file || metode_pembayaran === 'Cash')) {
-            const filepath = `./public/${pembayaranToUpdate.bukti_pembayaran}`
+            const filepath = `./public/receipts/${pembayaranToUpdate.bukti_pembayaran}`
             if (fs.existsSync(filepath)) {
                 try {
                     fs.unlinkSync(filepath);
