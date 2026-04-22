@@ -37,13 +37,18 @@ const usersRouter = require('./routes/miladmantsani/users')
 const adminRouter = require('./routes/miladmantsani/admin')
 const authRouter = require('./routes/miladmantsani/auth')
 
+const usersBukuTamuRouter = require('./routes/bukutamu/users')
+
 // START
 app.get('/testing', (req, res) => {
     res.send('testing berhasil yuhuuu')
 })
+
 app.use('/',authRouter)
 app.use('/peserta', usersRouter)
 app.use('/admin', adminRouter)
+
+app.use('/bukutamu', usersBukuTamuRouter)
 // END
 
 // listen port
